@@ -4,6 +4,7 @@
 </head>	
 <body> 
 <script>
+/*
 	function fun1(word1,word2,count1,count2,value1,value2){
 
 	for(let i=0;i<word1.length;i++){
@@ -38,7 +39,51 @@
 
 	}
 	fun1("Raja","jeremiah",0,0,"","")
+	*/
+
+
+	
+	var word1 = prompt("enter first name");
+	var word2 = prompt("enter first name");
+
+	
+	var value1="";
+	var value2="";
+	let count1 = 0;
+	let count2 = 0;
+	
+	function find(a){
 		
+		for(let i=0;i<a.length;i++){
+			let x = a[i];
+			if(x=="a"||x=="A"||x=="e"||x=="E"||x=="i"||x=="I"||x=="o"||x=="O"||x=="u"||x=="U"){
+				if(a==word1){
+				count1++;
+				}else if(a==word2){
+					count2++;
+				}
+			}else{
+				if(a==word1){
+					value1+=a[i];
+				}else if(a==word2){
+					value2+=a[i];
+				}
+			}
+		}	
+	}
+	
+	find(word1);
+	find(word2);
+	
+	    if(count1>count2){
+			console.log("word one has a largest vowels count")
+		}else if(count1==count2){
+			console.log("word one and two has same vowels count")
+		}
+		else{
+			console.log("word two has a largest vowels count")
+		}
+		}
 	</script>
 </body>
 </html>
